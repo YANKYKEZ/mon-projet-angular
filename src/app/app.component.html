@@ -1,0 +1,35 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container bg-white">
+ <!-- <div class="row jumbotron">
+    <div class="col-6 ">
+      {{myDate | date:'yyyy-MM-dd'}}
+    </div>
+    <div class="col-6">
+      <h2 class="text-success">
+        {{bodyTitle}}
+      </h2>
+    </div>
+  </div>-->
+  <div class="row">
+    <div class="col-4">
+      <app-mon-premier></app-mon-premier>
+    </div>
+    <div class="col-6">
+      <ul class="list-group">
+        <h2>Mes Appareils</h2>
+        <app-appareil [appareilName]="appareilOne" [appareilStatus]="eteint"></app-appareil>
+        <app-appareil [appareilName]="appareilTwo" [appareilStatus]="onAllumer()"></app-appareil>
+        <app-appareil [appareilName]="appareilTree"></app-appareil>
+      </ul>
+      <br>
+      <button class="btn btn-success"
+              [disabled]="!isAuth"
+              (click)="onAllumer()"
+      >Tout Allumer</button>
+    </div>
+
+  </div>
+</div>
+
+
