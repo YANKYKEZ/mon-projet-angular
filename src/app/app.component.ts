@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {DatePipe} from '@angular/common';
+import {AppareilService} from './service/appareil.service';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +9,40 @@ import {DatePipe} from '@angular/common';
   providers: [DatePipe]
 })
 export class AppComponent {
-  myDate = new Date();
+  // @ts-ignore
+  myDate = new  Promise(
+    ((resolve, reject) => {
+      const date = new  Date();
+      setTimeout(
+        () => {
+          resolve(date);
+        }, 2000
+      );
+    } )
+  );
   isAuth = false;
-  appareilOne = 'Machine à laver';
-  appareilTwo = 'Fer à repasser ';
-  appareilTree = 'Refregirator';
+  appareils = [
+    {
+      name: 'Machine à laver',
+      status : 'éteint'
+    },
+    {
+      name: 'Ordinateur',
+      status : 'Allumé'
+    },
+    {
+      name: 'Téleviseur',
+      status : 'éteint'
+    },
+    {
+      name: 'Fer à repassé',
+      status : 'éteint'
+    }
+  ];
   bodyTitle = 'This is the first day of month';
-  constructor(private datePipe: DatePipe) {
+  constructor(private datePipe: DatePipe, private appareilService: AppareilService) {
     // @ts-ignore
-    this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
+   // this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
 
     setTimeout(
       () => {

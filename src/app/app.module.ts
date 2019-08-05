@@ -1,11 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppComponent } from './app.component';
 import { MonPremierComponent } from './mon-premier/mon-premier.component';
 import { AppareilComponent } from './appareil/appareil.component';
 import {FormsModule} from '@angular/forms';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import {AppareilService} from './service/appareil.service';
 
+// @ts-ignore
+// @ts-ignore
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,9 +20,12 @@ import {FormsModule} from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AngularFontAwesomeModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    AppareilService
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

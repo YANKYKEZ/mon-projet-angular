@@ -10,7 +10,7 @@ export class AppareilComponent implements OnInit {
   @Input() appareilStatus: string;
   // appareilName = 'Machine à laver';
 
-  // ppareilStatus = 'eteint';
+   // apareilStatus = 'eteint';
 
   constructor() { }
 
@@ -19,5 +19,14 @@ export class AppareilComponent implements OnInit {
   getStatus() {
     return this.appareilStatus;
   }
+
+  getColor() {
+    if (this.appareilStatus === 'éteint') {
+      return 'red';
+    } else  if (this.appareilStatus === 'Allumé') {
+      return 'green';
+    }
+  }
+
 
 }
