@@ -8,6 +8,8 @@ import { AppareilComponent } from './appareil/appareil.component';
 import {FormsModule} from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import {AppareilService} from './service/appareil.service';
+import { AuthComponent } from './auth/auth.component';
+import { AppareilViewComponent } from './appareil-view/appareil-view.component';
 
 // @ts-ignore
 // @ts-ignore
@@ -16,7 +18,9 @@ import {AppareilService} from './service/appareil.service';
   declarations: [
     AppComponent,
     MonPremierComponent,
-    AppareilComponent
+    AppareilComponent,
+    AuthComponent,
+    AppareilViewComponent
   ],
   imports: [
     BrowserModule,
