@@ -10,10 +10,17 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import {AppareilService} from './service/appareil.service';
 import { AuthComponent } from './auth/auth.component';
 import { AppareilViewComponent } from './appareil-view/appareil-view.component';
+import {RouterModule} from '@angular/router';
 
 // @ts-ignore
 // @ts-ignore
 // @ts-ignore
+
+const appRoutes: Routes = [
+  {path : 'appareils', component: AppareilViewComponent},
+  {path : 'auth', component: AuthComponent},
+  {path : '', component : AppareilViewComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +32,8 @@ import { AppareilViewComponent } from './appareil-view/appareil-view.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     AppareilService
